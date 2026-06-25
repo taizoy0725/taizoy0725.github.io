@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mobazou Developer Site</title>
-    <script>
-        var language = (navigator.language || navigator.userLanguage || "").toLowerCase();
-        if (!language.startsWith("ja")) {
-            window.location.replace("en/");
-        }
-    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -119,20 +113,20 @@
     <main>
         <header>
             <h1>mobazou Developer Site</h1>
-            <p class="lead">mobazou が公開している iPhone / iPad アプリのサポートページです。</p>
+            <p class="lead">Support pages for iPhone and iPad apps published by mobazou.</p>
         </header>
 
         <section class="apps" aria-label="Apps">
-            <a class="app-link" href="Webmakidenlite/">
-                <span class="app-name">巻き紙電卓Lite</span>
-                <span class="app-desc">計算履歴を巻紙のように残せる、シンプルで使いやすい計算機アプリです。</span>
-                <span class="button-text">アプリページへ</span>
+            <a class="app-link" href="../Webmakidenlite/">
+                <span class="app-name">Rolled Paper Calculator Lite</span>
+                <span class="app-desc">A simple calculator app that keeps your calculation history like a paper roll.</span>
+                <span class="button-text">Open app page</span>
             </a>
 
-            <a class="app-link" href="Webfastingmanager/">
+            <a class="app-link" href="../Webfastingmanager/">
                 <span class="app-name">Fasting Manager</span>
-                <span class="app-desc">断食タイマーと HealthKit の健康データをまとめて管理できるアプリです。</span>
-                <span class="button-text">アプリページへ</span>
+                <span class="app-desc">Manage your fasting timer and HealthKit health data in one app.</span>
+                <span class="button-text">Open app page</span>
             </a>
         </section>
 
