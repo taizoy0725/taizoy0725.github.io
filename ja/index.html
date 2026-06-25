@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobazou Developer Site</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #24303d;
+            background: #f7f8fa;
+        }
+
+        main {
+            width: min(920px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 64px 0;
+        }
+
+        header {
+            margin-bottom: 36px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 2.4rem;
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .lead {
+            margin: 0;
+            color: #5f6c7b;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .apps {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .app-link {
+            display: block;
+            min-height: 176px;
+            padding: 24px;
+            color: inherit;
+            text-decoration: none;
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+        }
+
+        .app-link:focus,
+        .app-link:hover {
+            border-color: #2773c8;
+            box-shadow: 0 8px 24px rgba(39, 115, 200, 0.12);
+            outline: none;
+        }
+
+        .app-name {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .app-desc {
+            display: block;
+            color: #5f6c7b;
+            line-height: 1.7;
+        }
+
+        .button-text {
+            display: inline-block;
+            margin-top: 20px;
+            color: #1665b7;
+            font-weight: 700;
+        }
+
+        footer {
+            margin-top: 44px;
+            padding-top: 20px;
+            color: #7a8591;
+            border-top: 1px solid #dfe5ec;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 720px) {
+            main {
+                width: min(100% - 28px, 920px);
+                padding: 40px 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .apps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>mobazou Developer Site</h1>
+            <p class="lead">mobazou が公開している iPhone / iPad アプリのサポートページです。</p>
+        </header>
+
+        <section class="apps" aria-label="Apps">
+            <a class="app-link" href="../Webmakidenlite/">
+                <span class="app-name">巻き紙電卓Lite</span>
+                <span class="app-desc">計算履歴を巻紙のように残せる、シンプルで使いやすい計算機アプリです。</span>
+                <span class="button-text">アプリページへ</span>
+            </a>
+
+            <a class="app-link" href="../Webfastingmanager/">
+                <span class="app-name">Fasting Manager</span>
+                <span class="app-desc">断食タイマーと HealthKit の健康データをまとめて管理できるアプリです。</span>
+                <span class="button-text">アプリページへ</span>
+            </a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 mobazou. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
