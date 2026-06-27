@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An iPhone weather data app for viewing changes in rainfall, cloud cover, temperature, wind, and atmospheric pressure on a map.">
+    <title>Rain &amp; Wind Weather Map</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2d38;
+            background: #f5f7f8;
+            line-height: 1.8;
+        }
+
+        header { color: #ffffff; background: #176b73; }
+
+        .hero,
+        main,
+        footer {
+            width: min(900px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero { padding: 72px 0 64px; }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline { margin: 0; font-size: 1.25rem; font-weight: 600; }
+        main { padding: 48px 0 64px; }
+
+        section {
+            padding: 32px 0;
+            border-bottom: 1px solid #d9e0e3;
+        }
+
+        section:first-child { padding-top: 0; }
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 1.65rem;
+            line-height: 1.4;
+            letter-spacing: 0;
+        }
+
+        h3 { margin: 24px 0 4px; font-size: 1.12rem; letter-spacing: 0; }
+        p { margin: 0 0 14px; }
+        ul { margin: 12px 0 0; padding-left: 1.4rem; }
+        li { margin: 4px 0; }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 28px;
+        }
+
+        .data-grid h3 { margin-top: 0; }
+
+        .notice {
+            padding: 24px;
+            background: #ffffff;
+            border-left: 4px solid #c24c3d;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #66747d;
+            border-top: 1px solid #d9e0e3;
+            font-size: 0.9rem;
+        }
+
+        footer p { margin: 0; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 900px); }
+            .hero { padding: 52px 0 46px; }
+            main { padding: 34px 0 48px; }
+            section { padding: 26px 0; }
+            .data-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Rain &amp; Wind Weather Map</h1>
+            <p class="tagline">Track rain, wind, and cloud movement over time on a map</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <p>Rain &amp; Wind Weather Map is an iPhone weather data app that displays changes in rainfall, cloud cover, temperature, wind, and atmospheric pressure on a map.</p>
+            <p>It retrieves data from the GFS numerical forecast model published by the U.S. National Oceanic and Atmospheric Administration (NOAA) and uses colors to show weather changes around Japan.</p>
+            <p>Select a date and time, or use the play button to animate changes over time. The app helps you understand conditions from a few hours to several days ahead for outdoor work, farming, fishing, and leisure activities.</p>
+        </section>
+
+        <section>
+            <h2>Switch Between Five Weather Layers</h2>
+            <div class="data-grid">
+                <div><h3>Rainfall</h3><p>Displays hourly rainfall using color bands, helping you track the spread, direction, and intensity of rain areas.</p></div>
+                <div><h3>Cloud Cover</h3><p>Displays the percentage of sky covered by clouds, showing cloud movement and boundaries with clear areas.</p></div>
+                <div><h3>Temperature</h3><p>Displays near-surface temperature distribution, making it easier to see warm and cold air masses and regional differences.</p></div>
+                <div><h3>Wind</h3><p>Displays near-surface wind speed for outdoor work, marine activities, fishing, and other situations where wind changes matter.</p></div>
+                <div><h3>Atmospheric Pressure</h3><p>Displays mean sea level pressure, helping you identify high- and low-pressure systems and changes in pressure patterns.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Animate Changes Over Time</h2>
+            <p>Play the selected day's data as a time series.</p>
+            <ul>
+                <li>Play and pause</li>
+                <li>Move to the previous or next time</li>
+                <li>Select a time with the slider</li>
+                <li>Smooth animation between forecast times</li>
+                <li>Switch between dates</li>
+            </ul>
+            <p>For the current day, the display starts at the most recent whole hour before the current time. Future dates start at 0:00.</p>
+        </section>
+
+        <section>
+            <h2>Nationwide and Regional Views</h2>
+            <p>View all of Japan or select a specific region.</p>
+            <ul>
+                <li>All Japan</li>
+                <li>All Japan excluding islands</li>
+                <li>Hokkaido</li>
+                <li>Tohoku</li>
+                <li>Kanto</li>
+                <li>Hokuriku</li>
+                <li>Tokai</li>
+                <li>Kansai</li>
+                <li>Chugoku</li>
+                <li>Shikoku</li>
+                <li>Kyushu</li>
+                <li>Okinawa</li>
+            </ul>
+            <p>Regional views enlarge the selected area and interpolate the numerical grid to make distributions easier to read on a phone screen.</p>
+        </section>
+
+        <section>
+            <h2>Forecasts Up to 384 Hours Ahead</h2>
+            <p>Using GFS numerical data, the app displays forecasts up to 384 hours ahead.</p>
+            <ul>
+                <li>0-120 hours: 1-hour intervals</li>
+                <li>123-384 hours: 3-hour intervals</li>
+            </ul>
+            <p>Check both detailed near-term changes and broader trends several days ahead.</p>
+        </section>
+
+        <section>
+            <h2>Direct Access to NOAA Numerical Data</h2>
+            <p>The app retrieves GFS data directly from NOAA's NCEP NOMADS service. It does not use a proprietary weather server or website; publicly available numerical forecast data is analyzed and rendered within the app.</p>
+            <p>GFS (Global Forecast System) is NOAA's global numerical weather prediction model. It uses observations from around the world to calculate the state of the atmosphere.</p>
+        </section>
+
+        <section>
+            <h2>Useful For</h2>
+            <ul>
+                <li>Outdoor construction and civil engineering work</li>
+                <li>Farming and facility management</li>
+                <li>Fishing and marine activities</li>
+                <li>Camping and hiking</li>
+                <li>Sports and outdoor events</li>
+                <li>Reviewing longer-term changes in rain and wind</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="notice">
+                <h2>Important Information</h2>
+                <p>The information shown by this app is calculated by a numerical forecast model. It is not an official weather forecast, warning, or advisory issued by the Japan Meteorological Agency or another public authority.</p>
+                <p>Actual weather may differ from the model results. For decisions involving disasters or personal safety, always check the latest information issued by official agencies.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2026 mobazou. All rights reserved.</p></footer>
+</body>
+</html>

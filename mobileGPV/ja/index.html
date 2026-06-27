@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="雨量・雲量・気温・風・気圧の変化を地図上で確認できるiPhone向け気象データアプリです。">
+    <title>雨・風 気象マップ</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2d38;
+            background: #f5f7f8;
+            line-height: 1.8;
+        }
+
+        header {
+            color: #ffffff;
+            background: #176b73;
+        }
+
+        .hero,
+        main,
+        footer {
+            width: min(900px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero { padding: 72px 0 64px; }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        main { padding: 48px 0 64px; }
+
+        section {
+            padding: 32px 0;
+            border-bottom: 1px solid #d9e0e3;
+        }
+
+        section:first-child { padding-top: 0; }
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 1.65rem;
+            line-height: 1.4;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 24px 0 4px;
+            font-size: 1.12rem;
+            letter-spacing: 0;
+        }
+
+        p { margin: 0 0 14px; }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 1.4rem;
+        }
+
+        li { margin: 4px 0; }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px 28px;
+        }
+
+        .data-grid h3 { margin-top: 0; }
+
+        .notice {
+            padding: 24px;
+            background: #ffffff;
+            border-left: 4px solid #c24c3d;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #66747d;
+            border-top: 1px solid #d9e0e3;
+            font-size: 0.9rem;
+        }
+
+        footer p { margin: 0; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 900px); }
+            .hero { padding: 52px 0 46px; }
+            main { padding: 34px 0 48px; }
+            section { padding: 26px 0; }
+            .data-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>雨・風 気象マップ</h1>
+            <p class="tagline">雨・風・雲の動きを、時間を追って地図で確認</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <p>「雨・風 気象マップ」は、雨量・雲量・気温・風・気圧の変化を地図上で確認できるiPhone向け気象データアプリです。</p>
+            <p>米国海洋大気庁（NOAA）が公開しているGFS数値予報モデルのデータを取得し、日本周辺の気象変化を色分けして表示します。</p>
+            <p>日付や時刻を選ぶだけでなく、再生ボタンを使って時間変化をアニメーション表示できます。屋外作業や農作業、釣り、レジャーなど、数時間後から数日先までの変化を把握したい場面で活用できます。</p>
+        </section>
+
+        <section>
+            <h2>5種類の気象データを切り替え</h2>
+            <div class="data-grid">
+                <div><h3>雨量</h3><p>1時間あたりの雨量を色分けして表示します。雨域の広がりや移動方向、強まり方の確認に利用できます。</p></div>
+                <div><h3>雲量</h3><p>空を覆う雲の割合を表示します。雲域の移動や、晴天域との境界を確認できます。</p></div>
+                <div><h3>気温</h3><p>地上付近の気温分布を表示します。暖気・寒気の広がりや、地域による温度差を把握できます。</p></div>
+                <div><h3>風</h3><p>地上付近の風の強さを表示します。屋外作業、海上活動、釣りなどで風の変化を確認したい場合に役立ちます。</p></div>
+                <div><h3>気圧</h3><p>海面更正気圧の分布を表示します。低気圧や高気圧の位置、気圧配置の変化を確認できます。</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>時間変化をアニメーションで確認</h2>
+            <p>選択した日のデータを時系列で再生できます。</p>
+            <ul>
+                <li>再生・停止</li>
+                <li>前後の時刻への移動</li>
+                <li>スライダーによる時刻選択</li>
+                <li>時刻間を滑らかにつなぐアニメーション</li>
+                <li>日付ごとの表示切り替え</li>
+            </ul>
+            <p>当日は現在時刻直前の00分から表示し、明日以降は0:00から確認できます。</p>
+        </section>
+
+        <section>
+            <h2>日本全土と地域別表示</h2>
+            <p>日本全土だけでなく、確認したい地域を選択して表示できます。</p>
+            <ul>
+                <li>日本全土</li>
+                <li>日本全土（島を除く）</li>
+                <li>北海道</li>
+                <li>東北</li>
+                <li>関東</li>
+                <li>北陸</li>
+                <li>東海</li>
+                <li>関西</li>
+                <li>中国</li>
+                <li>四国</li>
+                <li>九州</li>
+                <li>沖縄</li>
+            </ul>
+            <p>地域表示では対象範囲を拡大し、数値格子を補間することで、携帯画面でも分布を見やすく表示します。</p>
+        </section>
+
+        <section>
+            <h2>最大384時間先まで対応</h2>
+            <p>GFSの数値データを使用し、最大384時間先まで表示します。</p>
+            <ul>
+                <li>0〜120時間先：1時間間隔</li>
+                <li>123〜384時間先：3時間間隔</li>
+            </ul>
+            <p>直近の細かな変化から、数日先の大きな傾向まで確認できます。</p>
+        </section>
+
+        <section>
+            <h2>NOAAの数値データを直接取得</h2>
+            <p>アプリはNOAAのNCEP NOMADSからGFSデータを直接取得します。独自の気象サーバやWebサイトを経由せず、公開されている数値予報データをアプリ内で解析・描画します。</p>
+            <p>GFS（Global Forecast System）は、NOAAが運用する全球数値予報モデルです。世界中の観測データをもとに、大気の状態をコンピューターで計算しています。</p>
+        </section>
+
+        <section>
+            <h2>こんな場面に</h2>
+            <ul>
+                <li>建設・土木などの屋外作業</li>
+                <li>農作業や施設管理</li>
+                <li>釣りや海上活動</li>
+                <li>キャンプや登山</li>
+                <li>スポーツや屋外イベント</li>
+                <li>雨や風の長期的な変化を確認したいとき</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="notice">
+                <h2>ご利用上の注意</h2>
+                <p>本アプリが表示する情報は、数値予報モデルによる計算結果です。気象庁などが発表する天気予報、警報、注意報ではありません。</p>
+                <p>実際の天候は計算結果と異なる場合があります。災害や安全に関わる判断には、公的機関が発表する最新の気象情報を併せてご確認ください。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer><p>&copy; 2026 mobazou. All rights reserved.</p></footer>
+</body>
+</html>
