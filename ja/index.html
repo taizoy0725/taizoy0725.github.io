@@ -93,6 +93,18 @@
             font-size: 0.9rem;
         }
 
+        footer p {
+            margin: 0 0 8px;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer a {
+            color: #1665b7;
+        }
+
         @media (max-width: 720px) {
             main {
                 width: min(100% - 28px, 920px);
@@ -113,7 +125,7 @@
     <main>
         <header>
             <h1>mobazou Developer Site</h1>
-            <p class="lead">mobazou が公開している iPhone / iPad アプリのサポートページです。</p>
+            <p class="lead">mobazou が公開している iPhone / iPad アプリのサポートページです。詳しくは各アプリのページを参照ください。</p>
         </header>
 
         <section class="apps" aria-label="Apps">
@@ -137,6 +149,10 @@
         </section>
 
         <footer>
+            <p>
+                <a href="https://taizoy0725.github.io/makidenlite/ja/privacy-policy.html">プライバシーポリシー</a> |
+                <a href="https://www.facebook.com/mobazoiPhoneApp">お問い合わせ</a>
+            </p>
             <p>&copy; 2026 mobazou. All rights reserved.</p>
         </footer>
     </main>
