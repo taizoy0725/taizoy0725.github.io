@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support page for MacFileNavigator, a macOS file manager with a familiar Explorer-style workflow.">
+    <title>MacFileNavigator Support</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2933;
+            background: #f6f7f9;
+            line-height: 1.75;
+        }
+
+        header { background: #ffffff; border-bottom: 1px solid #dce2e8; }
+
+        .hero,
+        main,
+        footer {
+            width: min(940px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+            padding: 56px 0;
+        }
+
+        .app-icon {
+            display: block;
+            width: 128px;
+            height: 128px;
+            border-radius: 24px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline { margin: 0; color: #536170; font-size: 1.2rem; font-weight: 600; }
+        main { padding: 24px 0 56px; }
+        section { padding: 30px 0; border-bottom: 1px solid #dce2e8; }
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.55rem;
+            line-height: 1.35;
+            letter-spacing: 0;
+        }
+
+        h3 { margin: 0 0 6px; font-size: 1.08rem; letter-spacing: 0; }
+        p { margin: 0 0 12px; }
+        ul { margin: 10px 0 0; padding-left: 1.4rem; }
+        li { margin: 5px 0; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 34px;
+        }
+
+        .feature p { color: #536170; }
+
+        .requirement {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #234f77;
+            background: #e8f1f8;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #6c7782;
+            border-top: 1px solid #dce2e8;
+            font-size: 0.9rem;
+        }
+
+        footer p { margin: 0 0 8px; }
+        footer p:last-child { margin-bottom: 0; }
+        footer a { color: #245f91; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 940px); }
+
+            .hero {
+                grid-template-columns: 84px minmax(0, 1fr);
+                gap: 18px;
+                padding: 38px 0;
+            }
+
+            .app-icon { width: 84px; height: 84px; border-radius: 18px; }
+
+            h1 {
+                font-size: clamp(1.7rem, 9vw, 2.2rem);
+                overflow-wrap: anywhere;
+            }
+
+            .tagline { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img class="app-icon" src="../assets/app-icon.png" alt="MacFileNavigator app icon" width="128" height="128">
+            <div>
+                <h1>MacFileNavigator</h1>
+                <p class="tagline">A Mac file manager with a familiar Windows Explorer-style workflow</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>A Clearer Way to Manage Files on Your Mac</h2>
+            <p>MacFileNavigator brings the sidebar, address bar, tabs, and file list together in one macOS window. Move quickly between frequently used folders and keep files and folders organized with familiar controls.</p>
+            <span class="requirement">Requires macOS 14 or later</span>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Multiple Tabs</h3>
+                    <p>Open folders in separate tabs and switch between them while preserving each tab's location and navigation history.</p>
+                </div>
+                <div class="feature">
+                    <h3>Quick Access</h3>
+                    <p>Use the sidebar to reach your home folder, Desktop, Documents, Downloads, and other frequently used locations.</p>
+                </div>
+                <div class="feature">
+                    <h3>List and Icon Views</h3>
+                    <p>Choose the view that suits your work, adjust icon size, and show or hide hidden files.</p>
+                </div>
+                <div class="feature">
+                    <h3>File Operations</h3>
+                    <p>Create folders, rename, copy, cut, paste, move, compress, and move items to the Trash.</p>
+                </div>
+                <div class="feature">
+                    <h3>Search and Quick Look</h3>
+                    <p>Filter the current folder by name and press Space to preview a file with Quick Look.</p>
+                </div>
+                <div class="feature">
+                    <h3>iCloud Drive</h3>
+                    <p>Browse and manage permitted locations in iCloud Drive, including Desktop and Documents.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>File Access</h2>
+            <p>MacFileNavigator operates within the Mac App Sandbox. When a protected folder is needed, the app accesses only locations that you explicitly authorize through the macOS folder selection panel.</p>
+            <p>File listing and operations take place on your Mac. MacFileNavigator does not send file contents to its own external server.</p>
+        </section>
+
+        <section>
+            <h2>Support</h2>
+            <p>For questions, bug reports, or feature requests, please contact us through the support page below.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="https://www.facebook.com/mobazoiPhoneApp">Contact Us</a>
+        </p>
+        <p>&copy; 2026 mobazou. All rights reserved.</p>
+    </footer>
+</body>
+</html>

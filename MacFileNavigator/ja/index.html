@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Windowsのエクスプローラーに近い操作感でファイルを管理できるMac用アプリ、MacFileNavigatorのサポートページです。">
+    <title>MacFileNavigator サポート</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2933;
+            background: #f6f7f9;
+            line-height: 1.75;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        .hero,
+        main,
+        footer {
+            width: min(940px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+            padding: 56px 0;
+        }
+
+        .app-icon {
+            display: block;
+            width: 128px;
+            height: 128px;
+            border-radius: 24px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline {
+            margin: 0;
+            color: #536170;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        main { padding: 24px 0 56px; }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.55rem;
+            line-height: 1.35;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 1.08rem;
+            letter-spacing: 0;
+        }
+
+        p { margin: 0 0 12px; }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 1.4rem;
+        }
+
+        li { margin: 5px 0; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 34px;
+        }
+
+        .feature p { color: #536170; }
+
+        .requirement {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #234f77;
+            background: #e8f1f8;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #6c7782;
+            border-top: 1px solid #dce2e8;
+            font-size: 0.9rem;
+        }
+
+        footer p { margin: 0 0 8px; }
+        footer p:last-child { margin-bottom: 0; }
+        footer a { color: #245f91; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 940px); }
+
+            .hero {
+                grid-template-columns: 84px minmax(0, 1fr);
+                gap: 18px;
+                padding: 38px 0;
+            }
+
+            .app-icon {
+                width: 84px;
+                height: 84px;
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: clamp(1.7rem, 9vw, 2.2rem);
+                overflow-wrap: anywhere;
+            }
+
+            .tagline { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img class="app-icon" src="../assets/app-icon.png" alt="MacFileNavigator アプリアイコン" width="128" height="128">
+            <div>
+                <h1>MacFileNavigator</h1>
+                <p class="tagline">Windowsのエクスプローラーに近い操作感のMac用ファイル管理アプリ</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Macのファイルを、見通しよく操作</h2>
+            <p>MacFileNavigatorは、サイドバー、アドレスバー、タブ、ファイル一覧を1つのウインドウにまとめたmacOS用ファイル管理アプリです。よく使うフォルダから目的の場所へ移動し、ファイルやフォルダを効率よく整理できます。</p>
+            <span class="requirement">macOS 14以降</span>
+        </section>
+
+        <section>
+            <h2>主な機能</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>複数タブ</h3>
+                    <p>フォルダごとにタブを開き、それぞれの現在位置や移動履歴を保ったまま切り替えられます。</p>
+                </div>
+                <div class="feature">
+                    <h3>クイックアクセス</h3>
+                    <p>ホーム、デスクトップ、書類、ダウンロードなど、よく使う場所へサイドバーから移動できます。</p>
+                </div>
+                <div class="feature">
+                    <h3>一覧表示とアイコン表示</h3>
+                    <p>用途に合わせて表示方法を切り替え、アイコンサイズや隠しファイルの表示も調整できます。</p>
+                </div>
+                <div class="feature">
+                    <h3>ファイル操作</h3>
+                    <p>新規フォルダ、名前変更、コピー、切り取り、貼り付け、移動、圧縮、ゴミ箱への移動に対応します。</p>
+                </div>
+                <div class="feature">
+                    <h3>検索とQuick Look</h3>
+                    <p>表示中のフォルダを名前で絞り込み、Spaceキーでファイルをすばやくプレビューできます。</p>
+                </div>
+                <div class="feature">
+                    <h3>iCloud Drive</h3>
+                    <p>許可した範囲のiCloud Drive、デスクトップ、書類フォルダを表示して操作できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>ファイルへのアクセス</h2>
+            <p>MacFileNavigatorはMac App Sandboxの範囲内で動作します。保護されたフォルダを開く場合は、macOSの選択画面からユーザーが明示的に許可した場所だけにアクセスします。</p>
+            <p>ファイルの一覧表示や操作はMac上で行われ、アプリ独自の外部サーバーへファイル内容を送信しません。</p>
+        </section>
+
+        <section>
+            <h2>サポート</h2>
+            <p>ご質問、不具合のご報告、ご要望は、お問い合わせページからご連絡ください。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="privacy-policy.html">プライバシーポリシー</a> |
+            <a href="https://www.facebook.com/mobazoiPhoneApp">お問い合わせ</a>
+        </p>
+        <p>&copy; 2026 mobazou. All rights reserved.</p>
+    </footer>
+</body>
+</html>
