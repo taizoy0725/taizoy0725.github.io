@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support page for Ninja IntelMail, a Mac email app that organizes and summarizes your mail with Apple Intelligence and helps you draft replies.">
+    <title>Ninja IntelMail Support</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2933;
+            background: #f6f7f9;
+            line-height: 1.75;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        .hero,
+        main,
+        footer {
+            width: min(940px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+            padding: 56px 0;
+        }
+
+        .app-icon {
+            display: block;
+            width: 128px;
+            height: 128px;
+            border-radius: 24px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline {
+            margin: 0;
+            color: #536170;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        main { padding: 24px 0 56px; }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.55rem;
+            line-height: 1.35;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 1.08rem;
+            letter-spacing: 0;
+        }
+
+        p { margin: 0 0 12px; }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 1.4rem;
+        }
+
+        li { margin: 5px 0; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 34px;
+        }
+
+        .feature p { color: #536170; }
+
+        .requirement {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #234f77;
+            background: #e8f1f8;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .pains {
+            list-style: none;
+            margin: 4px 0 22px;
+            padding: 0;
+        }
+
+        .pains li {
+            margin: 10px 0;
+            padding: 12px 18px;
+            color: #3b4753;
+            background: #eef1f5;
+            border-left: 3px solid #b7c2cf;
+            border-radius: 6px;
+        }
+
+        .solution {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1f2933;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #6c7782;
+            border-top: 1px solid #dce2e8;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer p { margin: 0 0 8px; }
+        footer p:last-child { margin-bottom: 0; }
+        footer a { color: #245f91; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 940px); }
+
+            .hero {
+                grid-template-columns: 84px minmax(0, 1fr);
+                gap: 18px;
+                padding: 38px 0;
+            }
+
+            .app-icon {
+                width: 84px;
+                height: 84px;
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: clamp(1.7rem, 9vw, 2.2rem);
+                overflow-wrap: anywhere;
+            }
+
+            .tagline { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img class="app-icon" src="../assets/app-icon.png" alt="Ninja IntelMail app icon" width="128" height="128">
+            <div>
+                <h1>Ninja IntelMail</h1>
+                <p class="tagline">A Mac email app that organizes your mail with Apple Intelligence and helps you reply</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Does any of this sound familiar?</h2>
+            <ul class="pains">
+                <li>"My inbox is such a mess that I miss important messages."</li>
+                <li>"Lately I get so much spam — it feels risky."</li>
+                <li>"I keep missing appointments. Isn't there a better way?"</li>
+            </ul>
+            <p>So many people struggle with the same things. Why?</p>
+            <p>Because <strong>email itself still works the way it was designed over 50 years ago</strong>.</p>
+            <p class="solution">We rethought how email works and integrated it with AI. That's Ninja IntelMail.</p>
+        </section>
+
+        <section>
+            <h2>A smarter inbox</h2>
+            <p>Ninja IntelMail is a macOS email app that brings Gmail and other accounts together in a single window. Using on-device analysis powered by Apple Intelligence, it summarizes and organizes large volumes of mail and helps you draft replies quickly.</p>
+            <span class="requirement">macOS 26 or later</span>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Multiple accounts</h3>
+                    <p>Manage Gmail (OAuth) alongside IMAP / SMTP and POP3 accounts, all in one place.</p>
+                </div>
+                <div class="feature">
+                    <h3>AI summaries</h3>
+                    <p>Apple Intelligence analyzes message content on your device to summarize and help you prioritize.</p>
+                </div>
+                <div class="feature">
+                    <h3>AI reply assist</h3>
+                    <p>Generate reply drafts based on the message context, then review and edit before sending.</p>
+                </div>
+                <div class="feature">
+                    <h3>Events &amp; deadlines</h3>
+                    <p>Add events and deadlines detected in your mail to macOS Calendar, with your confirmation.</p>
+                </div>
+                <div class="feature">
+                    <h3>Contacts sync</h3>
+                    <p>Sync recipients with macOS Contacts to make addressing messages faster.</p>
+                </div>
+                <div class="feature">
+                    <h3>Compose &amp; attach</h3>
+                    <p>Compose and reply with To / Cc / Bcc and file attachments, just like a regular mail client.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Built with privacy in mind</h2>
+            <p>Message analysis and reply drafting are performed on your device by Apple Intelligence. Your email content and contacts are never sent to the developer's servers.</p>
+            <p>Mail is sent and received directly between your Mac and your own email services, such as Gmail. Account credentials are stored securely in the macOS Keychain. See the <a href="https://taizoy0725.github.io/makidenlite/en/privacy-policy.html">Privacy Policy</a> for details.</p>
+        </section>
+
+        <section>
+            <h2>Support</h2>
+            <p>For questions, bug reports, or feature requests, please reach out through our contact page.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://taizoy0725.github.io/makidenlite/en/privacy-policy.html">Privacy Policy</a> |
+            <a href="https://www.facebook.com/mobazoiPhoneApp">Contact Us</a>
+        </p>
+        <p>&copy; 2026 mobazou. All rights reserved.</p>
+    </footer>
+</body>
+</html>

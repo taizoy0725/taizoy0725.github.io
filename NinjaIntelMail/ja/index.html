@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apple Intelligenceでメールを整理・要約し、返信の下書きまで支援するMac用メールアプリ、Ninja IntelMailのサポートページです。">
+    <title>Ninja IntelMail サポート</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1f2933;
+            background: #f6f7f9;
+            line-height: 1.75;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        .hero,
+        main,
+        footer {
+            width: min(940px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 128px minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+            padding: 56px 0;
+        }
+
+        .app-icon {
+            display: block;
+            width: 128px;
+            height: 128px;
+            border-radius: 24px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .tagline {
+            margin: 0;
+            color: #536170;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        main { padding: 24px 0 56px; }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #dce2e8;
+        }
+
+        section:last-child { border-bottom: 0; }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 1.55rem;
+            line-height: 1.35;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 1.08rem;
+            letter-spacing: 0;
+        }
+
+        p { margin: 0 0 12px; }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 1.4rem;
+        }
+
+        li { margin: 5px 0; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px 34px;
+        }
+
+        .feature p { color: #536170; }
+
+        .requirement {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #234f77;
+            background: #e8f1f8;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .pains {
+            list-style: none;
+            margin: 4px 0 22px;
+            padding: 0;
+        }
+
+        .pains li {
+            margin: 10px 0;
+            padding: 12px 18px;
+            color: #3b4753;
+            background: #eef1f5;
+            border-left: 3px solid #b7c2cf;
+            border-radius: 6px;
+        }
+
+        .solution {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1f2933;
+        }
+
+        footer {
+            padding: 24px 0 40px;
+            color: #6c7782;
+            border-top: 1px solid #dce2e8;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer p { margin: 0 0 8px; }
+        footer p:last-child { margin-bottom: 0; }
+        footer a { color: #245f91; }
+
+        @media (max-width: 640px) {
+            .hero,
+            main,
+            footer { width: min(100% - 28px, 940px); }
+
+            .hero {
+                grid-template-columns: 84px minmax(0, 1fr);
+                gap: 18px;
+                padding: 38px 0;
+            }
+
+            .app-icon {
+                width: 84px;
+                height: 84px;
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: clamp(1.7rem, 9vw, 2.2rem);
+                overflow-wrap: anywhere;
+            }
+
+            .tagline { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img class="app-icon" src="../assets/app-icon.png" alt="Ninja IntelMail アプリアイコン" width="128" height="128">
+            <div>
+                <h1>Ninja IntelMail</h1>
+                <p class="tagline">Apple Intelligence でメールを整理し、返信までサポートするMac用メールアプリ</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>メール、こんなことで困っていませんか？</h2>
+            <ul class="pains">
+                <li>「メールがごちゃごちゃしていて、大切なお知らせを見落としちゃう」</li>
+                <li>「最近スパムメールがたくさん来て、なんだか危ない」</li>
+                <li>「予定も見逃しちゃうし、どうにかならないかな」</li>
+            </ul>
+            <p>多くの人が、同じことで困っています。なぜでしょうか？</p>
+            <p>それは、<strong>メールという仕組みそのものが、50年以上前に作られたまま</strong>だからです。</p>
+            <p class="solution">その仕組みを根本から見直し、AI と統合しました。それが Ninja IntelMail です。</p>
+        </section>
+
+        <section>
+            <h2>受信をもっと賢く</h2>
+            <p>Ninja IntelMail は、Gmail をはじめとする複数のメールアカウントを1つのウインドウにまとめて扱えるmacOS用メールアプリです。Apple Intelligence によるオンデバイス解析で、大量のメールを要約・分類し、返信の下書きまで手早く進められます。</p>
+            <span class="requirement">macOS 26 以降</span>
+        </section>
+
+        <section>
+            <h2>主な機能</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>複数アカウント対応</h3>
+                    <p>Gmail（OAuth）に加え、IMAP / SMTP、POP3 のメールアカウントをまとめて管理できます。</p>
+                </div>
+                <div class="feature">
+                    <h3>AI 要約・分類</h3>
+                    <p>Apple Intelligence がメール本文を端末内で解析し、内容の要約や重要度の整理を手助けします。</p>
+                </div>
+                <div class="feature">
+                    <h3>AI 返信アシスト</h3>
+                    <p>本文の文脈をふまえた返信の下書きを生成。内容を確認・編集してから送信できます。</p>
+                </div>
+                <div class="feature">
+                    <h3>予定・期限の抽出</h3>
+                    <p>メールから見つけた予定や締め切りを、確認のうえ macOS のカレンダーへ追加できます。</p>
+                </div>
+                <div class="feature">
+                    <h3>連絡先の同期</h3>
+                    <p>送信先を macOS の連絡先と同期し、宛先の入力をスムーズにします。</p>
+                </div>
+                <div class="feature">
+                    <h3>作成・添付</h3>
+                    <p>To / Cc / Bcc の指定や添付ファイルに対応し、通常のメール作成・返信を行えます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>プライバシーへの配慮</h2>
+            <p>メールの解析や返信の下書き生成は、Apple Intelligence により端末内で行われます。開発者独自のサーバーへメール本文や連絡先を送信することはありません。</p>
+            <p>メールの送受信は、ご利用の Gmail や各メールサービスとの間で直接行われます。アカウントの認証情報は macOS の Keychain に安全に保管されます。詳しくは<a href="https://taizoy0725.github.io/makidenlite/ja/privacy-policy.html">プライバシーポリシー</a>をご覧ください。</p>
+        </section>
+
+        <section>
+            <h2>サポート</h2>
+            <p>ご質問、不具合のご報告、ご要望は、お問い合わせページからご連絡ください。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://taizoy0725.github.io/makidenlite/ja/privacy-policy.html">プライバシーポリシー</a> |
+            <a href="https://www.facebook.com/mobazoiPhoneApp">お問い合わせ</a>
+        </p>
+        <p>&copy; 2026 mobazou. All rights reserved.</p>
+    </footer>
+</body>
+</html>
