@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman — LLM を用いたかな漢字変換 | mobazou Developer Site</title>
+    <meta name="description" content="Roman は、かな漢字変換に LLM を導入した macOS 用の日本語入力ソフト (IME) です。ローマ字を続けて打つだけで、文脈に合った漢字かなまじり文になります。変換も学習もすべて Mac の中で完結します。">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #24303d;
+            background: #f7f8fa;
+        }
+
+        main {
+            width: min(920px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 64px 0;
+        }
+
+        .breadcrumb {
+            margin: 0 0 24px;
+            color: #7a8591;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #1665b7;
+        }
+
+        header {
+            margin-bottom: 36px;
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 14px;
+        }
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            flex: none;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            line-height: 1.15;
+        }
+
+        .version {
+            display: block;
+            margin-top: 6px;
+            color: #7a8591;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .lead {
+            margin: 0;
+            color: #5f6c7b;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        h3 {
+            margin: 0 0 8px;
+            font-size: 1.05rem;
+        }
+
+        p {
+            margin: 0 0 14px;
+            line-height: 1.8;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #1665b7;
+        }
+
+        .card {
+            padding: 24px;
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+        }
+
+        .demo {
+            margin: 0;
+        }
+
+        .demo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+        }
+
+        .demo figcaption {
+            margin-top: 10px;
+            color: #7a8591;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .flow {
+            margin: 0;
+            padding: 20px 24px;
+            overflow-x: auto;
+            color: #24303d;
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .features li {
+            padding: 20px 22px;
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+        }
+
+        .features .name {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .features .desc {
+            display: block;
+            color: #5f6c7b;
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border: 1px solid #dfe5ec;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            text-align: left;
+            line-height: 1.7;
+            border-bottom: 1px solid #dfe5ec;
+        }
+
+        tr:last-child th,
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        th {
+            width: 28%;
+            color: #5f6c7b;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .download {
+            display: inline-block;
+            padding: 14px 28px;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: #1665b7;
+            border-radius: 8px;
+        }
+
+        .download:focus,
+        .download:hover {
+            background: #12559b;
+            outline: none;
+        }
+
+        .note {
+            margin-top: 14px;
+            color: #5f6c7b;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        ol.steps {
+            margin: 0;
+            padding-left: 1.4em;
+        }
+
+        ol.steps li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        ol.steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 44px;
+            padding-top: 20px;
+            color: #7a8591;
+            border-top: 1px solid #dfe5ec;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0 0 8px;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer a {
+            color: #1665b7;
+        }
+
+        @media (max-width: 720px) {
+            main {
+                width: min(100% - 28px, 920px);
+                padding: 40px 0;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .app-icon {
+                width: 56px;
+                height: 56px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            th {
+                width: 34%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="breadcrumb"><a href="../../ja/index.html">mobazou Developer Site</a> / Roman</p>
+
+        <header>
+            <div class="title-row">
+                <img class="app-icon" src="../../assets/app-icons/roman.png" alt="Roman のアイコン" width="72" height="72">
+                <h1>Roman<span class="version">macOS 用日本語入力ソフト（IME）— 最新版 1.03</span></h1>
+            </div>
+            <p class="lead">Roman は、かな漢字変換に <strong>LLM（大規模言語モデル）</strong>を導入した macOS 用の日本語入力ソフトです。ローマ字を続けて打つだけで、文脈に合った漢字かなまじり文になります。<strong>変換も学習も AI も、あなたの Mac の中だけで動きます。</strong></p>
+        </header>
+
+        <section>
+            <figure class="demo">
+                <img src="../assets/demo.gif" alt="ローマ字を続けて打つと、打鍵が止まったところで漢字かなまじり文に変換される様子">
+                <figcaption>ローマ字を続けて打ち、手が止まったところで変換されます</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>変換キーを押さない</h2>
+            <pre class="flow">打鍵   nihongonyuuryokuhakawaru
+        │
+        │  打鍵と同時
+        ▼
+かな   にほんごにゅうりょくはかわる
+        │
+        │  打鍵が止まると
+        ▼
+変換   日本語入力は変わる</pre>
+            <p class="note">Roman は、変換キーを押さずに打鍵へ追随して変換が進む「ライブ変換」の一種ですが、打つそばから確定はせず、<strong>打鍵の合間にできる間合いをそのまま変換に使います</strong>。この打ち方を <strong>Roman タッチ</strong> と呼びます。辞書による候補生成・AI による評価と判定・あなたの学習を一体で扱ってかな漢字の組み合わせを決める方式を <strong>Roman変換</strong> と呼びます。</p>
+        </section>
+
+        <section>
+            <h2>5つの特徴</h2>
+            <ul class="features">
+                <li>
+                    <span class="name">変換キーいらず</span>
+                    <span class="desc">打鍵を少し止めると自動で変換され、そのまま打ち続ければ確定も自動で進みます。スペースキーは「他の候補を見たいとき」だけ押します。</span>
+                </li>
+                <li>
+                    <span class="name">思考を妨げない</span>
+                    <span class="desc">打っている途中や打ち直している間に表示が急に変わらず、書く手を止めません。</span>
+                </li>
+                <li>
+                    <span class="name">文脈を読んで選ぶ</span>
+                    <span class="desc">前後の文章を手掛かりに、選ぶべき文言・同音異義語を AI が判断します。</span>
+                </li>
+                <li>
+                    <span class="name">使うほど手に馴染む</span>
+                    <span class="desc">あなたが選んだ候補を自動で学習し、次から優先します。打ち間違いの癖も学習し、訂正に反映します。</span>
+                </li>
+                <li>
+                    <span class="name">すべて手元で完結</span>
+                    <span class="desc">変換・学習・AI 推論のすべてがローカル処理です。打った内容がインターネットへ送られることは一切ありません。</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ダウンロード</h2>
+            <p><a class="download" href="https://github.com/taizoy0725/roman/releases/latest">最新版を入手する（GitHub）</a></p>
+            <p class="note">パッケージ（pkg）は約 185 MB です。<strong>初回のインストール時に、変換に使う言語モデルを約 6.7 GB ダウンロードします</strong>（取得するかどうかはインストール時に確認します）。所要時間は回線速度により 15〜60 分程度です。<br>
+            インストール手順の詳細は <a href="https://github.com/taizoy0725/roman#インストール方法">README</a>、使い方・設定・困ったときは <a href="https://github.com/taizoy0725/roman/blob/main/docs/manual.md">ユーザマニュアル</a>を参照してください。</p>
+        </section>
+
+        <section>
+            <h2>動作環境</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>CPU</th>
+                        <td>Apple Silicon の Mac（AI をローカル実行するため。Intel Mac は対象外）<br>推奨: M4 以上</td>
+                    </tr>
+                    <tr>
+                        <th>メモリ</th>
+                        <td>16 GB 以上（変換用 AI が常駐で約 5 GB を使用）<br>推奨: 24 GB 以上</td>
+                    </tr>
+                    <tr>
+                        <th>ストレージ</th>
+                        <td>約 10 GB の空き（本体 0.4 GB ＋ 言語モデルと実行環境 6.7 GB ＋ 作業領域）</td>
+                    </tr>
+                    <tr>
+                        <th>OS</th>
+                        <td>macOS 14 以降</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="note">最低ラインのメモリ 16 GB でも動作しますが、大きなアプリと併用すると余裕がありません。</p>
+        </section>
+
+        <section>
+            <h2>インストールの流れ</h2>
+            <div class="card">
+                <ol class="steps">
+                    <li>pkg をダウンロードしてダブルクリックし、画面の指示に従います（管理者パスワードが必要です）。</li>
+                    <li>「インストールが完了しました」で<strong>閉じる</strong>を押します。</li>
+                    <li>入力ソースの有効化を macOS が確認します。<strong>許可</strong>を押します。</li>
+                    <li>言語モデル（Qwen・BERT）の取得を確認します。<strong>YES</strong> を選ぶと、不足しているものだけを取得します（進み具合が表示されます）。</li>
+                    <li>メニューバー右上の入力設定から <strong>Roman</strong> を選びます。</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>プライバシー</h2>
+            <div class="card">
+                <p>変換・学習・AI 推論のすべてが、あなたの Mac の中で行われます。<strong>打った内容がインターネットへ送られることは一切ありません。</strong></p>
+                <p>Roman が通信するのは次の2つの場面だけです。</p>
+                <ol class="steps">
+                    <li>インストール時に言語モデルを取得するとき（それぞれの公式配布元から。初回の一度だけ）</li>
+                    <li>設定で「新しい版を月1回確認する」を有効にした場合（<strong>既定は無効</strong>）</li>
+                </ol>
+            </div>
+        </section>
+
+        <section>
+            <h2>フィードバック</h2>
+            <p>不具合の報告・変換品質の報告・機能の要望は GitHub で受け付けています。<strong>誤変換のご報告では、打った文字（ローマ字）と期待した表記を書き添えていただけると助かります。</strong></p>
+            <p>
+                <a href="https://github.com/taizoy0725/roman/issues/new/choose">報告する（Issues）</a> ｜
+                <a href="https://github.com/taizoy0725/roman/discussions">相談・雑談（Discussions）</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>
+                <a href="https://github.com/taizoy0725/roman">GitHub</a> |
+                <a href="https://github.com/taizoy0725/roman/blob/main/TERMS.md">利用条件</a> |
+                <a href="https://www.facebook.com/mobazoiPhoneApp">お問い合わせ</a>
+            </p>
+            <p>&copy; 2026 mobazou. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
