@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roman</title>
+    <!-- OGP / Twitter カード (2026-08-14): SNS のクローラは JS の振り分けを実行しないため、
+         短い URL (/Roman/) を貼られたときのプレビューはこのページのタグが使われる -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="mobazou Developer Site">
+    <meta property="og:title" content="Roman — LLM を用いたかな漢字変換">
+    <meta property="og:description" content="変換キーを押さない macOS 用日本語入力ソフト (IME)。変換も学習も AI も、あなたの Mac の中だけで動きます。">
+    <meta property="og:url" content="https://taizoy0725.github.io/Roman/">
+    <meta property="og:image" content="https://taizoy0725.github.io/Roman/assets/ogp.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roman — LLM を用いたかな漢字変換">
+    <meta name="twitter:description" content="変換キーを押さない macOS 用日本語入力ソフト (IME)。変換も学習も AI も、あなたの Mac の中だけで動きます。">
+    <meta name="twitter:image" content="https://taizoy0725.github.io/Roman/assets/ogp.png">
     <script>
         var language = (navigator.language || navigator.userLanguage || "").toLowerCase();
         var target = language.startsWith("ja") ? "ja/index.html" : "en/index.html";
