@@ -306,29 +306,9 @@
 
         <section>
             <figure class="demo">
-                <video id="roman-demo" controls preload="metadata" playsinline poster="../assets/demo.gif">
-                    <source src="../assets/demo.mp4" type="video/mp4">
-                </video>
-                <img id="roman-demo-fallback" src="../assets/demo.gif" alt="Typing romaji continuously; the text turns into kanji-kana as soon as typing pauses" hidden>
+                <img src="../assets/demo.gif" alt="Typing romaji continuously; the text turns into kanji-kana as soon as typing pauses">
                 <figcaption>Type romaji continuously — conversion happens when your hands pause</figcaption>
             </figure>
-            <script>
-            (function () {
-              var v = document.getElementById('roman-demo');
-              var img = document.getElementById('roman-demo-fallback');
-              if (!v || !img) return;
-              function showGif() {
-                v.hidden = true;
-                img.hidden = false;
-              }
-              v.addEventListener('error', showGif, true);
-              var s = v.querySelector('source');
-              if (s) s.addEventListener('error', showGif);
-              fetch('../assets/demo.mp4', { method: 'HEAD', cache: 'no-store' })
-                .then(function (r) { if (!r.ok) showGif(); })
-                .catch(showGif);
-            })();
-            </script>
         </section>
 
         <section>
