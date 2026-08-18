@@ -122,12 +122,14 @@
             margin: 0;
         }
 
-        .demo img {
+        .demo img,
+        .demo video {
             display: block;
             width: 100%;
             height: auto;
             border: 1px solid #dfe5ec;
             border-radius: 8px;
+            background: #0f172a;
         }
 
         .demo figcaption {
@@ -304,8 +306,10 @@
 
         <section>
             <figure class="demo">
-                <img src="../assets/demo.gif" alt="Typing romaji continuously; the text turns into kanji-kana as soon as typing pauses">
-                <figcaption>Type romaji continuously — conversion happens when your hands pause</figcaption>
+                <video controls preload="metadata" playsinline poster="../assets/demo.gif">
+                    <source src="../assets/demo.mp4" type="video/mp4">
+                </video>
+                <figcaption>Narrated demo (about 2 minutes). Type romaji continuously — conversion happens when your hands pause</figcaption>
             </figure>
         </section>
 
