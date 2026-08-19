@@ -122,14 +122,12 @@
             margin: 0;
         }
 
-        .demo img,
-        .demo video {
+        .demo img {
             display: block;
             width: 100%;
             height: auto;
             border: 1px solid #dfe5ec;
             border-radius: 8px;
-            background: #0f172a;
         }
 
         .demo figcaption {
@@ -299,7 +297,7 @@
         <header>
             <div class="title-row">
                 <img class="app-icon" src="../../assets/app-icons/roman.png" alt="Roman app icon" width="72" height="72">
-                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 1.16</span></h1>
+                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 1.18</span></h1>
             </div>
             <p class="lead">Roman is a Japanese input method for macOS that brings an <strong>LLM (large language model)</strong> into kana-kanji conversion. Type romaji continuously and you get kanji-kana text that fits the context. <strong>Conversion, learning and inference all run on your own Mac.</strong></p>
         </header>
@@ -349,6 +347,28 @@ converted   日本語入力は変わる</pre>
                     <span class="desc">Conversion, learning and AI inference are all local. What you type is never sent to the internet.</span>
                 </li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Conversion accuracy</h2>
+            <p>Accuracy is measured on the public evaluation set <a href="https://github.com/azooKey/AJIMEE-Bench">AJIMEE-Bench</a> (200 items built from the Japanese Wikipedia input-error dataset; 100 with a preceding sentence, 100 without). Acc@1 is how often the first candidate is already correct; CER is the character error rate.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>First candidate correct (Acc@1)</th>
+                        <td><strong>80.5%</strong> (without context 83.0% / with context 78.0%)</td>
+                    </tr>
+                    <tr>
+                        <th>Character error rate (CER)</th>
+                        <td><strong>2.60%</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Version measured</th>
+                        <td>Roman 1.18 (2026-08-19; 1.17 was Acc@1 73.5% / CER 4.85%)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="note">Method: each item goes through the same path as normal typing (dictionary, AI scoring, context-based re-selection), and the text that appears on screen is taken as the answer. For items with a preceding sentence, that sentence is passed as context. Any spelling the evaluation set accepts (okurigana or numeral variants) counts as correct. The figures are measured on the developer's Mac with its learned state; the conversion adapts further to your own vocabulary as you use it.</p>
         </section>
 
         <section>
