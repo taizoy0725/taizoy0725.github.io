@@ -297,7 +297,7 @@
         <header>
             <div class="title-row">
                 <img class="app-icon" src="../../assets/app-icons/roman.png" alt="Roman app icon" width="72" height="72">
-                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 1.19</span></h1>
+                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 1.20</span></h1>
             </div>
             <p class="lead">Roman is a Japanese input method for macOS that brings an <strong>LLM (large language model)</strong> into kana-kanji conversion. Type romaji continuously and you get kanji-kana text that fits the context. <strong>Conversion, learning and inference all run on your own Mac.</strong></p>
         </header>
@@ -356,19 +356,19 @@ converted   日本語入力は変わる</pre>
                 <tbody>
                     <tr>
                         <th>First candidate correct (Acc@1)</th>
-                        <td><strong>80.5%</strong> (without context 83.0% / with context 78.0%)</td>
+                        <td><strong>80.5%</strong> (without context 83.0% / with context 78.0%) — for reference, macOS built-in Live Conversion: 64.5%</td>
                     </tr>
                     <tr>
                         <th>Character error rate (CER)</th>
-                        <td><strong>2.60%</strong></td>
+                        <td><strong>2.38%</strong> — for reference, macOS built-in Live Conversion: 4.19%</td>
                     </tr>
                     <tr>
                         <th>Version measured</th>
-                        <td>Roman 1.18 (2026-08-19; 1.17 was Acc@1 73.5% / CER 4.85%)</td>
+                        <td>Roman 1.20 (2026-08-20; 1.17 was Acc@1 73.5% / CER 4.85%)</td>
                     </tr>
                 </tbody>
             </table>
-            <p class="note">Method: each item goes through the same path as normal typing (dictionary, AI scoring, context-based re-selection), and the text that appears on screen is taken as the answer. For items with a preceding sentence, that sentence is passed as context. Any spelling the evaluation set accepts (okurigana or numeral variants) counts as correct. The figures are measured on the developer's Mac with its learned state; the conversion adapts further to your own vocabulary as you use it.</p>
+            <p class="note">Method: each item goes through the same path as normal typing (dictionary, AI scoring, context-based re-selection), and the text that appears on screen is taken as the answer. For items with a preceding sentence, that sentence is passed as context. Any spelling the evaluation set accepts (okurigana or numeral variants) counts as correct. The figures are measured on the developer's Mac with its learned state; the conversion adapts further to your own vocabulary as you use it. The macOS Live Conversion figures are a reference measurement taken on the same Mac, on the same day, with the same 200 items typed automatically into a text field with Live Conversion on, scoring the committed text by the same criteria (the macOS side also had the user's learning history).</p>
         </section>
 
         <section>
