@@ -297,7 +297,7 @@
         <header>
             <div class="title-row">
                 <img class="app-icon" src="../../assets/app-icons/roman.png" alt="Roman app icon" width="72" height="72">
-                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 2.00</span></h1>
+                <h1>Roman<span class="version">Japanese input method (IME) for macOS — latest 2.01</span></h1>
             </div>
             <p class="lead">Roman is a Japanese input method for macOS that brings an <strong>LLM (large language model)</strong> into kana-kanji conversion. Type romaji continuously and you get kanji-kana text that fits the context. <strong>Conversion, learning and inference all run on your own Mac.</strong></p>
         </header>
@@ -360,11 +360,11 @@ converted   日本語入力は変わる</pre>
                     </tr>
                     <tr>
                         <th>Character error rate (CER)</th>
-                        <td><strong>2.38%</strong> — for reference, macOS built-in Live Conversion: 4.19%</td>
+                        <td><strong>2.57%</strong> — for reference, macOS built-in Live Conversion: 4.19%</td>
                     </tr>
                     <tr>
                         <th>Version measured</th>
-                        <td>Roman 1.20 (2026-08-20; 1.17 was Acc@1 73.5% / CER 4.85%)</td>
+                        <td>Roman 2.01 (measured 2026-08-23; 1.20 was Acc@1 80.5% / CER 2.38%, 1.17 was 73.5% / 4.85%)</td>
                     </tr>
                 </tbody>
             </table>
@@ -378,7 +378,15 @@ converted   日本語入力は変わる</pre>
                 <tbody>
                     <tr>
                         <th>Base dictionary</th>
-                        <td>About 130k readings of common words, 190k katakana readings and 8k verbs, derived from the mozc OSS dictionary</td>
+                        <td>About 130k readings of common words, 67k katakana readings and 8k verbs, derived from the mozc OSS dictionary (2.01 narrowed the katakana entries from about 190k by removing machine-generated compounds that no external lexical resource backs up)</td>
+                    </tr>
+                    <tr>
+                        <th>Single kanji</th>
+                        <td>1,857 reading-character pairs covering the 2,136 jōyō kanji, from KANJIDIC2 (EDRDG) (added in 2.01)</td>
+                    </tr>
+                    <tr>
+                        <th>Modern-vocabulary top-up</th>
+                        <td>4,391 pairs found in UniDic for Contemporary Written Japanese (NINJAL) but missing from the base dictionary, kept only when JMdict (EDRDG) confirms them as present-day spellings (added in 2.01)</td>
                     </tr>
                     <tr>
                         <th>Proper nouns</th>

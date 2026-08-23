@@ -305,7 +305,7 @@
         <header>
             <div class="title-row">
                 <img class="app-icon" src="../../assets/app-icons/roman.png" alt="Roman のアイコン" width="72" height="72">
-                <h1>Roman<span class="version">macOS 用日本語入力ソフト（IME）— 最新版 2.00</span></h1>
+                <h1>Roman<span class="version">macOS 用日本語入力ソフト（IME）— 最新版 2.01</span></h1>
             </div>
             <p class="lead">Roman は、かな漢字変換に <strong>LLM（大規模言語モデル）</strong>を導入した macOS 用の日本語入力ソフトです。ローマ字を続けて打つだけで、文脈に合った漢字かなまじり文になります。<strong>変換も学習も AI も、あなたの Mac の中だけで動きます。</strong></p>
         </header>
@@ -370,11 +370,11 @@
                     </tr>
                     <tr>
                         <th>文字誤り率（CER）</th>
-                        <td><strong>2.38%</strong> — (参考) macOS 標準ライブ変換 4.19%</td>
+                        <td><strong>2.57%</strong> — (参考) macOS 標準ライブ変換 4.19%</td>
                     </tr>
                     <tr>
                         <th>測定した版</th>
-                        <td>Roman 1.20（2026-08-20。1.17 は Acc@1 73.5% / CER 4.85%）</td>
+                        <td>Roman 2.01（2026-08-23 実測。1.20 は Acc@1 80.5% / CER 2.38%、1.17 は 73.5% / 4.85%）</td>
                     </tr>
                 </tbody>
             </table>
@@ -388,7 +388,15 @@
                 <tbody>
                     <tr>
                         <th>基本辞書</th>
-                        <td>一般語 約13万読み・カタカナ語 約19万読み・動詞 約8千語。mozc の OSS 辞書に由来</td>
+                        <td>一般語 約13万読み・カタカナ語 約6.7万読み・動詞 約8千語。mozc の OSS 辞書に由来（カタカナ語は 2.01 で、外部の語彙資料で裏の取れない機械合成を除いて約19万読みから絞り込みました）</td>
+                    </tr>
+                    <tr>
+                        <th>単漢字</th>
+                        <td>常用漢字 2,136 字の音読み・訓読み 1,857 組。KANJIDIC2（EDRDG）に由来（2.01 で追加）</td>
+                    </tr>
+                    <tr>
+                        <th>現代語の補い</th>
+                        <td>4,391 組。現代書き言葉 UniDic（国立国語研究所）にあって基本辞書に無い語のうち、JMdict（EDRDG）で現代の表記と確認できたものだけ（2.01 で追加）</td>
                     </tr>
                     <tr>
                         <th>固有名詞</th>
