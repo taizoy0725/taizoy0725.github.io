@@ -443,21 +443,21 @@ converted   日本語入力は変わる</pre>
                     </tr>
                     <tr>
                         <td>Common</td>
-                        <td>About 2.0 GB</td>
-                        <td>Dictionary lattice and zenz<br><small>(in the pkg)</small><br>+ BERT</td>
-                        <td>Builds candidates only from words that exist in the dictionaries, then scores them in context to decide the ranking</td>
+                        <td>None<br><small>(in the pkg)</small></td>
+                        <td>Dictionary lattice and zenz</td>
+                        <td>Builds candidates only from words that exist in the dictionaries</td>
                     </tr>
                     <tr>
                         <td>16 GB<br><small>(below 24 GB)</small></td>
-                        <td>Nothing more<br><small>(2.0 GB in total)</small></td>
-                        <td>—</td>
-                        <td>Conversion runs with the common set</td>
+                        <td>About 2.0 GB</td>
+                        <td>BERT</td>
+                        <td>Scores each candidate in context and decides the ranking</td>
                     </tr>
                     <tr>
                         <td>24 GB or more</td>
-                        <td>+ About 2.8 GB<br><small>(4.8 GB in total)</small></td>
-                        <td>Qwen</td>
-                        <td>Re-selects among homophones the scoring could not separate</td>
+                        <td>About 4.8 GB</td>
+                        <td>BERT + Qwen</td>
+                        <td>All of the above, plus re-selecting among homophones the scoring could not separate</td>
                     </tr>
                 </tbody>
             </table>
