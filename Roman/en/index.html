@@ -206,6 +206,36 @@
             white-space: nowrap;
         }
 
+        /* 搭載メモリごとの表: 説明の列を広く取る */
+        .mem-table {
+            table-layout: fixed;
+        }
+
+        .mem-table th {
+            width: auto;
+            white-space: normal;
+        }
+
+        .mem-table th:nth-child(1),
+        .mem-table td:nth-child(1) {
+            width: 14%;
+        }
+
+        .mem-table th:nth-child(2),
+        .mem-table td:nth-child(2) {
+            width: 12%;
+        }
+
+        .mem-table th:nth-child(3),
+        .mem-table td:nth-child(3) {
+            width: 18%;
+        }
+
+        .mem-table th:nth-child(4),
+        .mem-table td:nth-child(4) {
+            width: 56%;
+        }
+
         .download {
             display: inline-block;
             padding: 14px 28px;
@@ -433,7 +463,7 @@ converted   日本語入力は変わる</pre>
             <p><a class="download" href="https://github.com/taizoy0725/roman/releases/latest">Get the latest release (GitHub)</a></p>
             <p class="note"><strong>Free for individuals</strong> (including sole proprietors and freelancers). <strong>Use by companies and other organizations requires a paid license</strong> — contact <a href="https://x.com/mobazou">@mobazou</a> via DM on X beforehand (see the <a href="https://github.com/taizoy0725/roman/blob/main/TERMS.md">terms of use</a>). If you like Roman, you can support its development through <a href="https://github.com/sponsors/taizoy0725">GitHub Sponsors</a>.</p>
             <p class="note">The package (pkg) is about 186 MB. <strong>On first install it downloads language models</strong> (the installer asks before downloading; expect 15–60 minutes depending on your connection). What is downloaded, and what it lets the conversion do, depends on how much memory your Mac has.</p>
-            <table>
+            <table class="mem-table">
                 <tbody>
                     <tr>
                         <th>Memory in your Mac</th>

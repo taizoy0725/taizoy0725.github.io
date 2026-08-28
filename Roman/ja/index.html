@@ -214,6 +214,36 @@
             white-space: nowrap;
         }
 
+        /* 搭載メモリごとの表: 説明の列を広く取る */
+        .mem-table {
+            table-layout: fixed;
+        }
+
+        .mem-table th {
+            width: auto;
+            white-space: normal;
+        }
+
+        .mem-table th:nth-child(1),
+        .mem-table td:nth-child(1) {
+            width: 14%;
+        }
+
+        .mem-table th:nth-child(2),
+        .mem-table td:nth-child(2) {
+            width: 12%;
+        }
+
+        .mem-table th:nth-child(3),
+        .mem-table td:nth-child(3) {
+            width: 18%;
+        }
+
+        .mem-table th:nth-child(4),
+        .mem-table td:nth-child(4) {
+            width: 56%;
+        }
+
         .download {
             display: inline-block;
             padding: 14px 28px;
@@ -443,7 +473,7 @@
             <p><a class="download" href="https://github.com/taizoy0725/roman/releases/latest">最新版を入手する（GitHub）</a></p>
             <p class="note"><strong>個人の方は無償</strong>でお使いいただけます（個人事業主・フリーランスの業務利用を含みます）。<strong>法人・団体の業務でのご使用は有償</strong>で、事前に作者との商用ライセンス契約が必要です — ご相談は X の <a href="https://x.com/mobazou">@mobazou</a> 宛 DM へ（詳細は<a href="https://github.com/taizoy0725/roman/blob/main/TERMS.md">利用条件</a>）。Roman を気に入っていただけたら、<a href="https://github.com/sponsors/taizoy0725">GitHub Sponsors での寄付</a>で開発を支援していただけます。</p>
             <p class="note">パッケージ（pkg）は約 186 MB です。<strong>初回のインストール時に、変換に使う言語モデルをダウンロードします</strong>（取得するかどうかはインストール時に確認します。所要時間は回線速度により 15〜60 分程度）。取得するものと、それでできることは搭載メモリで変わります。</p>
-            <table>
+            <table class="mem-table">
                 <tbody>
                     <tr>
                         <th>Mac の搭載メモリ</th>
