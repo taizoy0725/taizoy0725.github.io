@@ -442,7 +442,7 @@
             <h2>ダウンロード</h2>
             <p><a class="download" href="https://github.com/taizoy0725/roman/releases/latest">最新版を入手する（GitHub）</a></p>
             <p class="note"><strong>個人の方は無償</strong>でお使いいただけます（個人事業主・フリーランスの業務利用を含みます）。<strong>法人・団体の業務でのご使用は有償</strong>で、事前に作者との商用ライセンス契約が必要です — ご相談は X の <a href="https://x.com/mobazou">@mobazou</a> 宛 DM へ（詳細は<a href="https://github.com/taizoy0725/roman/blob/main/TERMS.md">利用条件</a>）。Roman を気に入っていただけたら、<a href="https://github.com/sponsors/taizoy0725">GitHub Sponsors での寄付</a>で開発を支援していただけます。</p>
-            <p class="note">パッケージ（pkg）は約 185 MB です。<strong>初回のインストール時に、変換に使う言語モデルをダウンロードします（24 GB 以上の Mac で約 4.8 GB、16 GB の Mac で約 2.0 GB）</strong>（取得するかどうかはインストール時に確認します）。所要時間は回線速度により 15〜60 分程度です。<br>
+            <p class="note">パッケージ（pkg）は約 177 MB です。<strong>初回のインストール時に、変換に使う言語モデルをダウンロードします</strong>（メモリ 24 GB 以上の Mac では約 4.8 GB、それ未満では約 2.0 GB。取得するかどうかはインストール時に確認します）。所要時間は回線速度により 15〜60 分程度です。<br>
             まず動きを見るなら <a href="https://github.com/taizoy0725/roman/blob/main/docs/quickstart.md">基本操作の概要</a>（動画）、インストール手順の詳細は <a href="https://github.com/taizoy0725/roman#インストール方法">README</a>、使い方・設定・困ったときは <a href="https://github.com/taizoy0725/roman/blob/main/docs/manual.md">ユーザマニュアル</a>を参照してください。</p>
         </section>
 
@@ -468,8 +468,31 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="note">16 GB の Mac では、常駐で約 5.5 GB を使う AI (Qwen) を導入しないため、無理なく動作します。24 GB 以上の Mac ではこの AI が入り、変換の精度が上がります。</p>
-            <p class="note">文脈から表記を選び直す AI (Qwen) は 2.04 からオプションです。常駐で約 5.5 GB を使うため、メモリ 24 GB 以上の Mac にのみ導入されます。16 GB の Mac では導入せず、辞書と BERT（日本語事前学習付きトランスフォーマ）による変換が同じように動きます。</p>
+            <p class="note">24 GB 未満の Mac では、常駐で約 5.5 GB を使う AI (Qwen) を導入しないため、無理なく動作します。24 GB 以上の Mac ではこの AI が入り、変換の精度が上がります。</p>
+            <h3>搭載メモリで変わるところ</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Mac の搭載メモリ</th>
+                        <th>取得量</th>
+                        <th>導入されるもの</th>
+                        <th>変換でできること</th>
+                    </tr>
+                    <tr>
+                        <td>16 GB<br><small>（24 GB 未満）</small></td>
+                        <td>約 2.0 GB</td>
+                        <td>辞書ラティス・zenz（pkg に同梱）<br>＋ BERT</td>
+                        <td>辞書に実在する語の連結だけで候補を組み立て、前後の文脈を含めて自然さを採点し、順位を決めます</td>
+                    </tr>
+                    <tr>
+                        <td>24 GB 以上</td>
+                        <td>約 4.8 GB</td>
+                        <td>上記 ＋ Qwen</td>
+                        <td>上記に加えて、採点が僅差になった同音異義（会場／海上 など）を意味で選び直します</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="note">文脈から表記を選び直す AI (Qwen) は 2.04 からオプションです。常駐で約 5.5 GB を使うため、メモリ 24 GB 以上の Mac にのみ導入されます。24 GB 未満の Mac では導入せず、辞書と BERT（日本語事前学習付きトランスフォーマ）による変換が同じように動きます。</p>
         </section>
 
         <section>
@@ -479,7 +502,7 @@
                     <li>pkg をダウンロードしてダブルクリックし、画面の指示に従います（管理者パスワードが必要です）。</li>
                     <li>「インストールが完了しました」で<strong>閉じる</strong>を押します。</li>
                     <li>入力ソースの有効化を macOS が確認します。<strong>許可</strong>を押します。</li>
-                    <li>言語モデルの取得を確認します。<strong>YES</strong> を選ぶと、不足しているものだけを取得します（進み具合が表示されます）。24 GB 以上の Mac では Qwen と BERT、16 GB の Mac では BERT だけが対象です。</li>
+                    <li>言語モデルの取得を確認します。<strong>YES</strong> を選ぶと、不足しているものだけを取得します（進み具合が表示されます）。メモリ 24 GB 以上の Mac では Qwen と BERT、それ未満の Mac では BERT だけが対象です。</li>
                     <li>Mac から<strong>ログアウトし、ログインし直します</strong>（追加された入力ソースは、ログインし直すまで反映されません）。</li>
                     <li>メニューバー右上の入力メニューから <strong>Roman</strong> を選びます。</li>
                 </ol>
