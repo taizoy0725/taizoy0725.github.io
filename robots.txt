@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taizoy0725.github.io/sitemap.xml
